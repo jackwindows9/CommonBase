@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import butterknife.BindView;
+import com.siw.practice.common.RecyclerViewAdapter;
 import java.util.List;
 
 public class PicRecyclerViewAdapter extends RecyclerViewAdapter<Drawable> {
