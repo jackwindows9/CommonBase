@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 public abstract class Fragment extends androidx.fragment.app.Fragment {
     private final static String TAG = Fragment.class.getSimpleName();
 
-    private View mRoot;
+    protected View mRoot;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -40,6 +40,8 @@ public abstract class Fragment extends androidx.fragment.app.Fragment {
                 e.printStackTrace();
             }
         }
+        initWidget();
+        initData();
         return mRoot;
     }
 
