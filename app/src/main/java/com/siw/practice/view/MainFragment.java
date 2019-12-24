@@ -64,6 +64,13 @@ public class MainFragment extends Fragment {
         mRecyclerView.setAdapter(picRecyclerViewAdapter);
     }
 
+    @Override
+    public boolean onBackPressed() {
+        // Pop up from back stack.
+        getFragmentManager().popBackStack();
+        return true;
+    }
+
     RecyclerViewAdapter.OnItemClickListener mOnItemClickListener = new RecyclerViewAdapter.OnItemClickListener<Drawable>() {
         @Override
         public void onItemClick(int position, Drawable drawable) {

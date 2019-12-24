@@ -26,7 +26,8 @@ public class MainActivity extends Activity {
     private void launchFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frame_layout, fragment)
+                .add(R.id.frame_layout, fragment)
+                .addToBackStack(null)
                 .commit();
     }
 }

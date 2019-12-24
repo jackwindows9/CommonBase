@@ -45,6 +45,8 @@ public abstract class Activity extends AppCompatActivity {
     public void onBackPressed() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
         if (null == fragments || 0 == fragments.size()) {
+            // If no fragment on current activity, we need to back current activity.
+            super.onBackPressed();
             return;
         }
         for (Fragment fragment: fragments) {
