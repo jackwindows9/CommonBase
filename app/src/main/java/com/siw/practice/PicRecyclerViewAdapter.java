@@ -1,6 +1,7 @@
 package com.siw.practice;
 
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
@@ -9,6 +10,7 @@ import com.siw.practice.common.RecyclerViewAdapter;
 import java.util.List;
 
 public class PicRecyclerViewAdapter extends RecyclerViewAdapter<Drawable> {
+    private static final String TAG = PicRecyclerViewAdapter.class.getSimpleName();
 
     public PicRecyclerViewAdapter(List<Drawable> mList) {
         super(mList);
@@ -21,6 +23,7 @@ public class PicRecyclerViewAdapter extends RecyclerViewAdapter<Drawable> {
 
     @Override
     protected int getItemViewType(int position, Drawable drawable) {
+        Log.d(TAG, "getItemViewType() " + R.layout.recycler_view_item);
         return R.layout.recycler_view_item;
     }
 

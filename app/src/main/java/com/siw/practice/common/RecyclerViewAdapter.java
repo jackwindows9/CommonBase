@@ -1,5 +1,6 @@
 package com.siw.practice.common;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import com.siw.practice.R;
 import java.util.List;
 
 public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> implements View.OnClickListener, View.OnLongClickListener{
+    private static final String TAG = RecyclerViewAdapter.class.getSimpleName();
 
     private List<Data> mList;
     private OnItemClickListener mOnItemClickListener;
@@ -25,6 +27,9 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        Log.d(TAG, "onCreateViewHolder() viewType = " + viewType);
+        // viewType from getItemViewType(). Different position, we can use different layout (This
+        // viewType actually is layout id, such as R.layout.recycler_view_item).
         View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
         RecyclerViewHolder holder = onCreateViewHolder(view, viewType);
         view.setTag(R.id.recycler_view_tag, holder);
@@ -46,7 +51,9 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
     @Override
     public int getItemViewType(int position) {
         if (null != mList && null != mList.get(position)) {
-            return getItemViewType(position, mList.get(position));
+            int viewType = getItemViewType(position, mList.get(position));
+            Log.d(TAG, "getItemViewType() viewType = " + viewType);
+            return viewType;
         }
         return super.getItemViewType(position);
     }

@@ -24,6 +24,7 @@ public abstract class Fragment extends androidx.fragment.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //
         if (null == mRoot) {
             int layoutId = getContentLayoutId();
             View view = LayoutInflater.from(container.getContext()).inflate(layoutId, container, false);
