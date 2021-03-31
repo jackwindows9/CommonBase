@@ -1,10 +1,10 @@
 package com.siw.practice.view;
 
 import com.siw.practice.R;
-import com.siw.practice.common.Activity;
+import com.siw.practice.common.BaseActivity;
 import com.siw.practice.common.Fragment;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
     private final static String TAG = MainActivity.class.getSimpleName();
 
     @Override

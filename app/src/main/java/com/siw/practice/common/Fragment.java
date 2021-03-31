@@ -69,9 +69,8 @@ public abstract class Fragment extends androidx.fragment.app.Fragment {
     protected abstract void initData();
 
     /**
-     * Back key press event will be handle by current fragment.
-     * The Activity will actively callback this method when trigger the activity's
-     * {@link Activity#onBackPressed()}
+     * 返回键将会被fragment处理
+     * 当调用BaseActivity的onBackPressed时将会主动调用这个方法。
      * @return True if Back press event handled by this current fragment, else false.
      */
     public boolean onBackPressed() {
