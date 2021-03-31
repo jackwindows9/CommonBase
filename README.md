@@ -1,3 +1,3 @@
 # CommonBase
 
-Define some interface about Fragment and Activity.
+Define some interface about Fragment and Activity. temp.
